@@ -48,3 +48,7 @@ https://github.com/Rayner33/custom-cookie-consent/blob/main/assets/js/front.js
 https://github.com/Rayner33/custom-cookie-consent/blob/main/includes/class-custom-cookie-consent.php
 https://github.com/Rayner33/custom-cookie-consent/blob/main/includes/class-loader.php
 https://github.com/Rayner33/custom-cookie-consent/blob/main/includes/modules/cookies/cookies.php
+
+git add . (dodaj wszystkie zmiany).
+git commit -m "Update files" (zatwierdź zmiany).
+git push origin main (wypchnij zmiany).
