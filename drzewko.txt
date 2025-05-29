@@ -1,0 +1,50 @@
+/custom-cookie-consent/
+├── /admin-src/                    # Kod źródłowy aplikacji Vue.js
+│   ├── /src/
+│   │   ├── /components/
+│   │   │   ├── CookieBanner.vue   # Komponent dla zakładki Cookie Banner
+│   │   │   ├── CookieManager.vue  # Komponent dla zakładki Cookie Manager
+│   │   │   └── Languages.vue      # Komponent dla zakładki Languages
+│   │   ├── App.vue                # Główny komponent Vue.js
+│   │   └── main.js                # Punkt wejścia aplikacji Vue.js
+│   ├── package.json
+│   ├── vue.config.js
+│   └── webpack.config.js
+├── /assets/                       # Skompilowane pliki
+│   ├── /js/
+│   │   ├── /admin-dist/
+│   │   │   └── admin-app.js       # Skompilowany plik Vue.js
+│   │   └── front.js               # skrypt frontendu bannera
+│   └── /css/
+│       └── front.css              # plik ze stylami frontendu bannera
+├── /includes/                     # Pliki PHP
+│   ├── /modules/
+│   │   ├── /cookies/
+│   │   │   └── cookies.php        # Logika backendu (REST API)
+│   ├── class-custom-cookie-consent.php
+│   └── class-loader.php
+├── custom-cookie-consent.php      # Główny plik wtyczki
+└── readme.txt
+
+npm run build
+
+npm install
+
+Struktura plików: https://github.com/Rayner33/custom-cookie-consent/
+
+Wszystkie pliki aplikacji:
+https://github.com/Rayner33/custom-cookie-consent/blob/main/custom-cookie-consent.php
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/package-lock.json
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/package.json
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/webpack.config.js
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/src/App.vue
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/src/main.js
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/src/components/CookieBanner.vue
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/src/components/CookieManager.vue
+https://github.com/Rayner33/custom-cookie-consent/blob/main/admin-src/src/components/Languages.vue
+https://github.com/Rayner33/custom-cookie-consent/blob/main/assets/css/front.css
+https://github.com/Rayner33/custom-cookie-consent/blob/main/assets/js/admin.js
+https://github.com/Rayner33/custom-cookie-consent/blob/main/assets/js/front.js
+https://github.com/Rayner33/custom-cookie-consent/blob/main/includes/class-custom-cookie-consent.php
+https://github.com/Rayner33/custom-cookie-consent/blob/main/includes/class-loader.php
+https://github.com/Rayner33/custom-cookie-consent/blob/main/includes/modules/cookies/cookies.php
