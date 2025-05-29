@@ -1,0 +1,7 @@
+admin_src/node_modules/
+node_modules/
+*.log
+.env
+dist/
+build/
+wp-config.php

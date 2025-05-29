@@ -1,0 +1,331 @@
+.ccc-banner {
+    z-index: 100000; /* Wyższy niż admin bar */
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl dla typu Box */
+.ccc-banner.ccc-type-box {
+    width: 400px !important; /* Powiększenie z 300px na 400px */
+    padding: 20px;
+    position: fixed;
+    box-sizing: border-box;
+    left: auto; /* Nadpisz potencjalne left */
+}
+
+/* Pozycje dla Box */
+.ccc-banner.ccc-type-box.ccc-position-top-left {
+    top: 20px;
+    left: 20px;
+    right: auto;
+    bottom: auto;
+}
+
+.ccc-banner.ccc-type-box.ccc-position-top-right {
+    top: 20px;
+    right: 20px;
+    left: auto !important;
+    bottom: auto;
+}
+
+.ccc-banner.ccc-type-box.ccc-position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+    top: auto;
+}
+
+.ccc-banner.ccc-type-box.ccc-position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    left: auto !important;
+    top: auto;
+}
+
+/* Styl dla typu Banner */
+.ccc-banner.ccc-type-banner {
+    width: 100%;
+    padding: 15px 30px; /* Zwiększenie paddingu, aby dać więcej miejsca */
+    position: fixed;
+    left: 0;
+}
+
+/* Jeśli admin bar jest widoczny, dodaj margines */
+body.admin-bar .ccc-banner.ccc-type-banner.ccc-position-top {
+    top: 32px; /* Wysokość admin bara */
+}
+
+.ccc-banner.ccc-position-top {
+    top: 0;
+}
+
+.ccc-banner.ccc-position-bottom {
+    bottom: 0;
+}
+
+/* Styl dla typu Popup */
+.ccc-banner.ccc-type-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.ccc-type-popup.ccc-position-center {
+    /* Popup jest już wyśrodkowany przez transform */
+}
+
+.ccc-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Wyrównanie tekstu do lewej dla Box i Popup */
+.ccc-type-box .ccc-inner,
+.ccc-type-popup .ccc-inner {
+    text-align: left;
+}
+
+/* Wyrównanie tekstu do środka dla Banner */
+.ccc-type-banner .ccc-inner {
+    text-align: center;
+}
+
+.ccc-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ccc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ccc-message {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ccc-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; /* Zapobiega zawijaniu przycisków */
+    justify-content: flex-start; /* W Box i Popup do lewej */
+}
+
+.ccc-type-banner .ccc-buttons {
+    justify-content: center; /* W Banner do środka */
+}
+
+.ccc-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    white-space: nowrap; /* Zapobiega zawijaniu tekstu w przyciskach */
+}
+
+/* Responsywność dla typu banner */
+.ccc-type-banner .ccc-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Większy odstęp, aby zmieścić elementy */
+}
+
+.ccc-type-banner .ccc-message {
+    flex: 1; /* Wiadomość zajmuje więcej miejsca */
+}
+
+/* Modal */
+.ccc-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ccc-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 849px; /* Nowa maksymalna szerokość */
+    width: 100%; /* Zajmuje 100% dostępnej przestrzeni, ale nie więcej niż max-width */
+    max-height: 80vh; /* Maksymalna wysokość 80% okna przeglądarki */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box; /* Upewniamy się, że padding nie zwiększa szerokości */
+}
+
+/* Kontener na treść między tytułem a przyciskami */
+.ccc-modal-body {
+    flex: 1;
+    overflow-y: auto; /* Przewijanie w pionie */
+    margin: 15px 0;
+}
+
+.ccc-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px; /* Zwiększamy obszar klikalny */
+    line-height: 1; /* Upewniamy się, że X jest wyśrodkowane w pionie */
+    width: 24px; /* Ustalamy szerokość, aby X był wyśrodkowany */
+    height: 24px; /* Ustalamy wysokość dla lepszego hitboxa */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Wyśrodkowanie X w poziomie i pionie */
+}
+
+.ccc-modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.ccc-modal-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd; /* Delikatna szara linia */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.ccc-message-container,
+.ccc-modal-message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Odstęp między akapitami */
+}
+
+.ccc-modal-message {
+    font-size: 14px;
+    margin: 0; /* Usunięto margin-bottom, bo odstępy są kontrolowane przez kontener */
+}
+
+.ccc-modal-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ccc-category {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.ccc-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ccc-category-title {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.ccc-category-description {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Styl przełącznika */
+.ccc-toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer; /* Przeniesiono cursor na label */
+}
+
+.ccc-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ccc-toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.ccc-toggle-slider::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.ccc-toggle input:checked + .ccc-toggle-slider {
+    background-color: #28a745; /* Zielone tło po włączeniu */
+}
+
+.ccc-toggle input:checked + .ccc-toggle-slider::before {
+    transform: translateX(20px); /* Przesunięcie kółka w prawo */
+}
+
+.ccc-toggle.disabled {
+    cursor: not-allowed;
+}
+
+.ccc-toggle.disabled .ccc-toggle-slider {
+    background-color: #ccc;
+}
+
+.ccc-modal-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding-top: 10px; /* Odstęp od treści */
+}
+
+.ccc-button-save {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+}
